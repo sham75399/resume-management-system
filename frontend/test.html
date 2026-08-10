@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backend Test</title>
+</head>
+<body>
+    <h1>Testing Backend Connection</h1>
+    <div id="result">Testing...</div>
+
+    <script>
+        fetch('http://localhost:5000/test')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = 
+                    '✅ SUCCESS! ' + JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = 
+                    '❌ FAILED! ' + error.message;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagnostic</title>
+</head>
+<body>
+    <h2>Backend Connection Diagnostic</h2>
+    <button onclick="testPort(5000)">Test Port 5000</button>
+    <button onclick="testPort(5001)">Test Port 5001</button>
+    <div id="result"></div>
+
+    <script>
+        async function testPort(port) {
+            const result = document.getElementById('result');
+            result.innerHTML = `Testing port ${port}...`;
+            
+            try {
+                const response = await fetch(`http://localhost:${port}/test`);
+                const data = await response.json();
+                result.innerHTML = `✅ Port ${port} WORKING! Response: ${JSON.stringify(data)}`;
+            } catch (error) {
+                result.innerHTML = `❌ Port ${port} FAILED: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>cd

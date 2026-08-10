@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicants - Resume Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="nav-brand">Resume Manager</a>
+            <div class="nav-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="applicants.html">Applicants</a>
+                <a href="applicant-form.html">Add New</a>
+                <span class="welcome-text" id="welcomeUser"></span>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-actions">
+            <h1>Applicants</h1>
+            <a href="applicant-form.html" class="btn btn-success">Add New Applicant</a>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="filterName" placeholder="Search by name">
+            <input type="text" id="filterSkills" placeholder="Skills (comma separated)">
+            <select id="filterStatus">
+                <option value="">All Status</option>
+                <option value="Applied">Applied</option>
+                <option value="Interview">Interview</option>
+                <option value="Hired">Hired</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+            <button onclick="applyFilters()" class="btn btn-primary">Filter</button>
+            <button onclick="clearFilters()" class="btn">Clear</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Skills</th>
+                    <th>Experience</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="applicantsList">
+                <tr>
+                    <td colspan="6" class="text-center">Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

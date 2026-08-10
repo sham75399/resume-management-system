@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Resume Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="nav-brand">Resume Manager</a>
+            <div class="nav-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="applicants.html">Applicants</a>
+                <a href="applicant-form.html">Add New</a>
+                <span class="welcome-text" id="welcomeUser"></span>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Dashboard</h1>
+        
+        <div class="stats-grid" id="statsContainer">
+            <div class="stat-card">
+                <h3>Total Applicants</h3>
+                <div class="stat-number" id="totalApplicants">0</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Recent Applicants</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Applied Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="recentApplicants">
+                    <tr>
+                        <td colspan="4" class="text-center">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
